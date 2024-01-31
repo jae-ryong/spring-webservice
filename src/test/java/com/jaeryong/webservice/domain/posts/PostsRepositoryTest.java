@@ -44,4 +44,23 @@ class PostsRepositoryTest {
         assertThat(posts.getAuthor()).isEqualTo("frogs6225");
     }
 
+    @Test
+    public void BaseTimeEntity_확인 (){
+        // given
+        LocalDateTime now = LocalDateTime.now();
+        postsRepository.save(Posts.builder()
+                .title("테스트 게시글")
+                .content("테스트 본문")
+                .author("frogs6225")
+                .build());
+        // when
+        List<Posts> list = postsRepository.findAll();
+        int cnt=0;
+        
+        // then
+        Posts posts = list.get(list.size()-1);
+        assertThat(posts.getCreatedTime()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
+    }
+
 }
