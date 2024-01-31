@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mariadb.c9vpknvypaou.ap-northeast-2.rds.amazonaws.com:3306/youna?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: admin
-    password: springboot
+    username:
+    password:
 
 
   jpa:
