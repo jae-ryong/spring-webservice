@@ -1,14 +1,23 @@
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    password: ${encrypt_key}
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://mariadb.c9vpknvypaou.ap-northeast-2.rds.amazonaws.com:3306/youna?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username:
-    password:
+    username: ENC(aDyfpAYOD7YBW022MwWCww==)
+    password: ENC(w/7lYbalp4GO19YI00iNY/xqiqSu8cnf)
+  h2:
+    console:
+      enabled: true
 
 
-  jpa:
-    hibernate:
-      ddl-auto:
-    show-sql: true
-    properties:
-      hibernate.format_sql: true
+jpa:
+  hibernate:
+    ddl-auto:
+  show-sql: true
+  properties:
+  hibernate.format_sql: true
